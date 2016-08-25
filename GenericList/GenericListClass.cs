@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace GenericList
 {
-    public class GenericListClass<T> : IEnumerable, IFormattable
+    public class GenericListClass<T> : IEnumerable
     {
 
         public T[] genericArray;
-        int position = 0;
+        //int position = 0;
 
         public GenericListClass(T[] item)
         {
@@ -34,7 +34,6 @@ namespace GenericList
                     newGenericArray[i] = genericArray[i];
                 }
                 newGenericArray[j] = item;
-                Console.WriteLine(newGenericArray[j]);
             }
             genericArray = newGenericArray;
             return genericArray;
@@ -95,33 +94,15 @@ namespace GenericList
             }
         }
 
-        public string ToString(string format, IFormatProvider formatProvider)
-        {
-            throw new NotImplementedException();
-        }
-
         public override String ToString()
         {
-                return ToString("G");
-        }
-
-        public void PrintString()
-        {
+            string newString = "";
             foreach (T item in genericArray)
             {
-                Console.Write(item.ToString());
+                newString += item.ToString();
             }
+            return newString;
         }
-
-        private string ToString(string v)
-        {
-            throw new NotImplementedException();
-        }
-
-
-
-
-
        
     }
 }
