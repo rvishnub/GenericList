@@ -14,7 +14,6 @@ namespace GenericList
 
         public T[] genericArray;
         public int _count;
-        //int position = 0;
 
         public GenericListClass(T[] item)
         {
