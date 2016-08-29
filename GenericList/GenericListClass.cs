@@ -15,6 +15,7 @@ namespace GenericList
         public T[] genericArray;
         public int _count;
 
+
         public GenericListClass(T[] item)
         {
             genericArray = item;
@@ -176,9 +177,6 @@ namespace GenericList
         {
             Array.Sort(genericArray);
         }
-
-
-
     }
 }
 

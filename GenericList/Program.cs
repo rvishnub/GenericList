@@ -11,7 +11,18 @@ namespace GenericList
     {
         static void Main(string[] args)
         {
-            GenericListClass<int> testList = new GenericListClass<int>(new int[10] { 2, 1, 2, 3, 4, 5, 6, 7, 8, 2 });
+
+            Random rnd = new Random();
+            GenericListClass<int> testList = new GenericListClass<int>(new int[10] {0,0,0,0,0,0,0,0,0,0 });
+
+            for (int i = 0; i<10; i++)
+            {
+                int milliseconds = 500;
+                Thread.Sleep(milliseconds);
+                int j = rnd.Next();
+                testList.Add(j);
+            }
+
 
             Console.WriteLine("This is the first list:");
             testList.PrintList();
@@ -131,7 +142,7 @@ namespace GenericList
                 lemons.Add(lemon);
                 lemon.SetPriceLemon();
                 SeventhList.Add(lemon.priceLemon);
-                Console.WriteLine(lemon + "    " + lemon.priceLemon);
+                Console.WriteLine(lemon + "    " + lemon.priceLemon + "     " + lemon.label);
             }
 
             Console.WriteLine("I am sorting the lemons with lemons.Sort().");
@@ -149,8 +160,6 @@ namespace GenericList
             }
 
             Console.ReadKey();
-
-
         }
     }
 }
